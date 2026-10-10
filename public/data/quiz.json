@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T14:03:59.077Z",
+  "generatedAt": "2026-10-10T14:19:14.008Z",
   "sets": [
     {
       "slug": "onegai-aipri",
@@ -480,7 +480,7 @@
       "songId": "poppy",
       "set": "himitsu-aipri",
       "performers": "青空ひまり",
-      "introStart": 0,
+      "introStart": 1,
       "durationSec": 117
     },
     {
@@ -488,7 +488,7 @@
       "songId": "シークレットドリーム",
       "set": "himitsu-aipri",
       "performers": "星川みつき",
-      "introStart": 0,
+      "introStart": 0.5,
       "durationSec": 108
     },
     {
@@ -496,7 +496,7 @@
       "songId": "standgetup",
       "set": "himitsu-aipri",
       "performers": "一条寺サクラ、二階堂タマキ",
-      "introStart": 0,
+      "introStart": 0.6,
       "durationSec": 114
     },
     {
@@ -504,7 +504,7 @@
       "songId": "ムテキduoエナジー",
       "set": "himitsu-aipri",
       "performers": "青空ひまり、星川みつき",
-      "introStart": 0,
+      "introStart": 0.6,
       "durationSec": 119
     },
     {
@@ -512,7 +512,7 @@
       "songId": "ヒカリノコトバ",
       "set": "himitsu-aipri",
       "performers": "鈴風つむぎ",
-      "introStart": 0,
+      "introStart": 0.8,
       "durationSec": 127
     },
     {
@@ -520,7 +520,7 @@
       "songId": "we'retheworld",
       "set": "himitsu-aipri",
       "performers": "青空ひまり、星川みつき、鈴風つむぎ",
-      "introStart": 0,
+      "introStart": 1.2,
       "durationSec": 121
     },
     {
@@ -528,7 +528,7 @@
       "songId": "ネバギバラバー",
       "set": "himitsu-aipri",
       "performers": "三ツ葉アイリ、四之宮リンリン",
-      "introStart": 0,
+      "introStart": 0.2,
       "durationSec": 122
     },
     {
@@ -536,7 +536,7 @@
       "songId": "perfectstars",
       "set": "himitsu-aipri",
       "performers": "一条寺サクラ、二階堂タマキ、三ツ葉アイリ、四之宮リンリン",
-      "introStart": 0,
+      "introStart": 0.1,
       "durationSec": 121
     },
     {
@@ -544,7 +544,7 @@
       "songId": "giragirastar",
       "set": "himitsu-aipri",
       "performers": "真実夜チィ",
-      "introStart": 0,
+      "introStart": 0.2,
       "durationSec": 115
     },
     {
@@ -552,7 +552,7 @@
       "songId": "きらめきのうた",
       "set": "himitsu-aipri",
       "performers": "鈴風つむぎ",
-      "introStart": 0,
+      "introStart": 0.5,
       "durationSec": 121
     },
     {
@@ -560,7 +560,7 @@
       "songId": "パステルステップデイズ",
       "set": "himitsu-aipri",
       "performers": "青空ひまり",
-      "introStart": 0,
+      "introStart": 0.1,
       "durationSec": 117
     },
     {
@@ -568,7 +568,7 @@
       "songId": "giragirastar",
       "set": "himitsu-aipri",
       "performers": "ダークチィ",
-      "introStart": 0,
+      "introStart": 0.5,
       "durationSec": 115
     },
     {
@@ -576,7 +576,7 @@
       "songId": "ニュースタージョーカー",
       "set": "himitsu-aipri",
       "performers": "ダークサクラ、ダークタマキ、ダークアイリ、ダークリンリン",
-      "introStart": 0,
+      "introStart": 0.7,
       "durationSec": 122
     },
     {
@@ -584,7 +584,7 @@
       "songId": "きらめきのうた",
       "set": "himitsu-aipri",
       "performers": "青空ひまり、星川みつき、鈴風つむぎ",
-      "introStart": 0,
+      "introStart": 0.1,
       "durationSec": 121
     },
     {
@@ -592,7 +592,7 @@
       "songId": "キズナ×リンク",
       "set": "himitsu-aipri",
       "performers": "青空ひまり、星川みつき",
-      "introStart": 0,
+      "introStart": 0.2,
       "durationSec": 116
     },
     {
@@ -640,7 +640,7 @@
       "songId": "ココロアストロノーツ",
       "set": "himitsu-aipri",
       "performers": "七浦すばる、七浦おとめ",
-      "introStart": 0,
+      "introStart": 0.2,
       "durationSec": 120
     },
     {
@@ -648,7 +648,7 @@
       "songId": "わいるどすたー",
       "set": "himitsu-aipri",
       "performers": "八王子ビビ",
-      "introStart": 0,
+      "introStart": 0.2,
       "durationSec": 112
     },
     {
@@ -656,7 +656,7 @@
       "songId": "わいるどすたー",
       "set": "himitsu-aipri",
       "performers": "八王子ビビ、真実夜チィ",
-      "introStart": 0,
+      "introStart": 0.2,
       "durationSec": 112
     },
     {
@@ -664,7 +664,7 @@
       "songId": "ミライのプリンセス",
       "set": "himitsu-aipri",
       "performers": "リング・クローバー",
-      "introStart": 0,
+      "introStart": 0.1,
       "durationSec": 124
     },
     {
@@ -672,7 +672,7 @@
       "songId": "ミラクルツインスマイル",
       "set": "himitsu-aipri",
       "performers": "青空ひまり、星川みつき",
-      "introStart": 0,
+      "introStart": 0.5,
       "durationSec": 118
     },
     {
@@ -680,7 +680,7 @@
       "songId": "ミライのプリンセス",
       "set": "himitsu-aipri",
       "performers": "鈴風つむぎ、リング・クローバー",
-      "introStart": 0,
+      "introStart": 0.1,
       "durationSec": 124
     },
     {
@@ -688,7 +688,7 @@
       "songId": "ニュースタージョーカー",
       "set": "himitsu-aipri",
       "performers": "一条寺サクラ、二階堂タマキ、三ツ葉アイリ、四之宮リンリン",
-      "introStart": 0,
+      "introStart": 0.2,
       "durationSec": 122
     },
     {
@@ -704,7 +704,7 @@
       "songId": "キズナ×リンク",
       "set": "himitsu-aipri",
       "performers": "ひみつのアイプリ",
-      "introStart": 0,
+      "introStart": 0.2,
       "durationSec": 232
     },
     {
