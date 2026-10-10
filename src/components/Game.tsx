@@ -221,7 +221,8 @@ export function Game({ data, settings, onFinish, onQuit }: Props) {
         </span>
       </div>
 
-      <div className="player-frame">
+      {/* 出題中は小さく（タイトルの曲名が切れて読めない）、正解発表で大きく見せる */}
+      <div className={`player-frame ${phase === 'revealed' ? 'is-big' : 'is-mini'}`}>
         <div ref={hostRef} className="player-host" />
       </div>
 

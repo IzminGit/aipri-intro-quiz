@@ -394,6 +394,23 @@ code {
   box-shadow: var(--shadow);
 }
 
+/*
+ * 出題中は小さな正方形のプレーヤーにして、上に出る動画タイトル（曲名）を途中で切れさせる。
+ * YouTube の埋め込みプレーヤーは 200×200px 以上が必要なので、少し余裕をもって 220px にする。
+ * 正解発表で元の大きさに戻す（ご褒美演出）。
+ */
+.player-frame.is-mini {
+  width: 220px;
+  height: 220px;
+  aspect-ratio: auto;
+  align-self: center;
+  border-radius: 14px;
+}
+
+.player-frame.is-big {
+  animation: grow 0.35s ease-out;
+}
+
 .player-host,
 .player-host iframe {
   position: absolute;
@@ -910,6 +927,13 @@ code {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  from {
+    opacity: 0.4;
+    transform: scale(0.6);
   }
 }
 
