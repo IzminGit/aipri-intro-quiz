@@ -590,14 +590,6 @@ code {
   gap: 2px;
 }
 
-/* 歌唱者（同じ曲のバージョン違いを見分ける） */
-.choice-performers {
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1.3;
-  opacity: 0.8;
-}
-
 .choice-tag {
   flex: none;
   margin-left: auto;

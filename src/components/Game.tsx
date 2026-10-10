@@ -262,7 +262,7 @@ export function Game({ data, settings, onFinish, onQuit }: Props) {
       )}
 
       {(phase === 'answering' || phase === 'revealed') && question && (
-        <ol className="choices" aria-label="曲名と歌っている人を選んでね">
+        <ol className="choices" aria-label="曲名を選んでね">
           {question.choices.map((c, i) => {
             const isAnswer = i === question.answerIndex
             const isPicked = i === selected
@@ -278,10 +278,7 @@ export function Game({ data, settings, onFinish, onQuit }: Props) {
                   <span className="choice-key" aria-hidden="true">
                     {phase === 'revealed' && isAnswer ? '○' : phase === 'revealed' && isPicked ? '×' : i + 1}
                   </span>
-                  <span className="choice-title">
-                    {c.title}
-                    {c.performers && <small className="choice-performers">{c.performers}</small>}
-                  </span>
+                  <span className="choice-title">{c.title}</span>
                   {phase === 'revealed' && isAnswer && <span className="choice-tag">正解</span>}
                   {phase === 'revealed' && isPicked && !isAnswer && <span className="choice-tag">あなたの答え</span>}
                 </button>
