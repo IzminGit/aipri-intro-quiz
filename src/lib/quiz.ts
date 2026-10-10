@@ -22,7 +22,7 @@ export interface Choice {
 export interface Question {
   video: QuizVideo
   song: Song
-  /** 8択（正解を含む） */
+  /** 8択（正解を含む）。同じ曲名のバージョンが8つを超える曲は、全部並べるため8択より多くなる */
   choices: Choice[]
   answerIndex: number
 }
@@ -30,8 +30,6 @@ export interface Question {
 export const CHOICE_COUNT = 8
 /** ダミーに混ぜる「同じキャラが歌う別の曲」の上限 */
 const SAME_CHARACTER_MAX = 3
-/** 流れた曲のバージョン（正解を含む）を選択肢に並べる上限 */
-const SAME_SONG_MAX = 4
 /** 同じ曲名が並ぶのが正解の曲だけにならないよう、ダミーにもバージョン違いをペアで混ぜる上限 */
 const DECOY_PAIR_MAX = 2
 export const COUNT_OPTIONS = [5, 10, 15] as const
@@ -69,7 +67,7 @@ function versionIndex(data: QuizData, inSetVideos: readonly QuizVideo[]) {
 
 /**
  * 8択を作る。
- * - 流れた曲に別バージョンがあれば、それも選択肢に並べて「誰が歌っているか」まで当てさせる
+ * - 流れた曲に別バージョンがあれば、それを全部選択肢に並べて「誰が歌っているか」まで当てさせる
  * - CGライブは映像でキャラが分かってしまうので、同じキャラが歌う別の曲を優先してダミーに混ぜる
  * - 正解の曲だけ同じ曲名が並ぶと曲名がバレるので、ダミーにもバージョン違いをペアで混ぜる
  */
@@ -92,8 +90,10 @@ function buildChoices(
   const siblings = shuffle(
     versionsOf(song.id).filter((c) => c.key !== answerKey),
     rng,
-  ).slice(0, SAME_SONG_MAX - 1)
+  )
   picked.push(...siblings)
+  // 同じ曲名のバージョンは必ず全部並べる。8つを超えるときはその問題だけ選択肢を増やす
+  const total = Math.max(CHOICE_COUNT, picked.length)
 
   const singers = splitSingers(video.performers)
   const others = shuffle(
@@ -112,12 +112,12 @@ function buildChoices(
 
   let pairs = 0
   for (const s of order) {
-    if (picked.length >= CHOICE_COUNT) break
+    if (picked.length >= total) break
     const versions = shuffle(versionsOf(s.id), rng)
     if (!versions.length) continue
     picked.push(versions[0])
     const needsDecoy = siblings.length > 0 && pairs < DECOY_PAIR_MAX && versions.length >= 2
-    if (needsDecoy && picked.length < CHOICE_COUNT) {
+    if (needsDecoy && picked.length < total) {
       picked.push(versions[1])
       pairs++
     }

@@ -142,6 +142,38 @@ describe('buildQuestions', () => {
     })
     expect(decoyPaired).toBe(true)
   })
+  it('同じ曲名のバージョンは全部並べ、8つを超えるときは選択肢を増やす', () => {
+    const names = (n: number) => Array.from({ length: n }, (_, i) => `キャラ${i + 1}`)
+    const withVersions = (n: number): QuizData => ({
+      ...data,
+      songs: [...data.songs, song('h', names(n))],
+      videos: [
+        ...data.videos,
+        ...names(n).map((p, i) => ({
+          id: `h${i}`,
+          songId: 'h',
+          set: 'c',
+          performers: p,
+          introStart: 0,
+          durationSec: 120,
+        })),
+      ],
+    })
+    for (const n of [5, 8, 10]) {
+      for (const q of buildQuestions(withVersions(n), { sets: all, count: 40, seed: `v${n}` }).filter(
+        (x) => x.song.id === 'h',
+      )) {
+        expect(
+          q.choices
+            .filter((c) => c.songId === 'h')
+            .map((c) => c.performers)
+            .sort(),
+        ).toEqual(names(n).sort())
+        expect(q.choices).toHaveLength(Math.max(8, n))
+        expect(q.choices[q.answerIndex].key).toBe(keyOf(q))
+      }
+    }
+  })
   it('同じキャラの別曲をダミーに優先する', () => {
     const q = buildQuestions(data, { sets: all, count: 20, seed: 'y' }).find((x) => x.song.id === 's3')!
     expect(q.choices.map((c) => c.songId)).toEqual(expect.arrayContaining(['s6']))
