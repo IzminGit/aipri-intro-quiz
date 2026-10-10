@@ -38,7 +38,7 @@ export function Home({ data, challenge, onStart }: Props) {
   return (
     <main className="page home">
       <header className="hero">
-        <p className="hero-kicker">おねがい♡アイプリ ファンメイド</p>
+        <p className="hero-kicker">アイプリ ファンメイド</p>
         <h1 className="hero-title">
           アイプリ
           <br />
@@ -71,7 +71,7 @@ export function Home({ data, challenge, onStart }: Props) {
           <section className="card rules" aria-labelledby="rules-title">
             <h2 id="rules-title">あそびかた</h2>
             <ol>
-              <li>CGライブのイントロが流れたら、8つの中から曲名をタップ！</li>
+              <li>イントロが流れたら、8つの中から曲名をタップ！</li>
               <li>
                 音が鳴ってから答えるまでの<strong>はやさ</strong>で点数が決まるよ（最大{MAX_POINTS}点・
                 {TIME_LIMIT_MS / 1000}秒で時間切れ）
