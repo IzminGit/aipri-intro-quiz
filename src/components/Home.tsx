@@ -76,7 +76,7 @@ export function Home({ data, challenge, onStart }: Props) {
                 音が鳴ってから答えるまでの<strong>はやさ</strong>で点数が決まるよ（最大{MAX_POINTS}点・
                 {TIME_LIMIT_MS / 1000}秒で時間切れ）
               </li>
-              <li>連続正解でコンボボーナス！ 結果をシェアして友達と勝負しよう</li>
+              <li>連続正解でコンボボーナス！ 自己ベストを目指そう</li>
             </ol>
           </section>
 

@@ -763,12 +763,6 @@ code {
   gap: 10px;
 }
 
-.copied {
-  text-align: center;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
 .review {
   list-style: none;
   margin: 0;

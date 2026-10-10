@@ -4,7 +4,6 @@ import { buildQuestions, availableSongCount } from './quiz.ts'
 import { createRng, shuffle } from './rng.ts'
 import { basePoints, comboBonus, rankFor, scoreAnswer } from './score.ts'
 import { settingsFromHash, settingsToHash } from './settings-url.ts'
-import { buildShareText } from './share.ts'
 import { parseTitle, sameSinger, songKey, splitSingers } from './title.ts'
 
 describe('parseTitle', () => {
@@ -157,18 +156,5 @@ describe('挑戦状URL', () => {
     expect(settingsFromHash('#/play?sets=zzz&n=5&seed=abc', ['a'])).toBeNull()
     expect(settingsFromHash('#/play?sets=a&n=5&seed=<x>', ['a'])).toBeNull()
     expect(settingsFromHash('#/play?sets=a&n=7&seed=abc', ['a'])?.count).toBe(10)
-  })
-})
-
-describe('シェア文', () => {
-  it('結果記号と挑戦状URLを含む', () => {
-    const questions = buildQuestions(data, { sets: ['a'], count: 2, seed: 's' })
-    const text = buildShareText(
-      { questions, answers: [scoreAnswer(true, 900, 0), scoreAnswer(false, 3000, 1)] },
-      'https://example.com/#/play?seed=s',
-    )
-    expect(text).toContain('⚡❌')
-    expect(text).toContain('最速 0.90秒')
-    expect(text).toContain('https://example.com/#/play?seed=s')
   })
 })

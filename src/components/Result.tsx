@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import type { GameSettings } from '../lib/quiz.ts'
 import { newSeed } from '../lib/rng.ts'
 import { answerMark, formatSec, rankFor } from '../lib/score.ts'
-import { bestKey, settingsToHash } from '../lib/settings-url.ts'
-import { buildShareText, fastest, totalScore, type GameResult } from '../lib/share.ts'
+import { bestKey } from '../lib/settings-url.ts'
+import { fastest, totalScore, type GameResult } from '../lib/result.ts'
 import { loadBestScores, saveBestScores } from '../lib/storage.ts'
 
 interface Props {
@@ -49,31 +49,6 @@ export function Result({ settings, result, onRetry, onHome }: Props) {
     if (isNewBest) saveBestScores({ ...loadBestScores(), [bestKey(settings)]: total })
   }, [isNewBest, settings, total])
 
-  const challengeUrl = `${location.origin}${location.pathname}${settingsToHash(settings)}`
-  const shareText = buildShareText(result, challengeUrl)
-  const [copied, setCopied] = useState<string | null>(null)
-
-  const copy = async (text: string, label: string) => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopied(label)
-    } catch {
-      setCopied('コピーできませんでした。長押しで選択してね')
-    }
-  }
-
-  const share = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({ text: shareText })
-        return
-      } catch (e) {
-        if (e instanceof DOMException && e.name === 'AbortError') return
-      }
-    }
-    await copy(shareText, '結果をコピーしたよ！ LINE や X に貼り付けてね')
-  }
-
   return (
     <main className="page result">
       <section className="card result-hero">
@@ -114,21 +89,6 @@ export function Result({ settings, result, onRetry, onHome }: Props) {
       </section>
 
       <div className="actions">
-        <button type="button" className="btn btn-primary btn-big" onClick={share}>
-          結果をシェアして挑戦状を送る 💌
-        </button>
-        <button
-          type="button"
-          className="btn btn-secondary"
-          onClick={() => copy(challengeUrl, '挑戦状のURLをコピーしたよ！')}
-        >
-          挑戦状URLだけコピー
-        </button>
-        {copied && (
-          <p className="copied" role="status">
-            {copied}
-          </p>
-        )}
         <div className="actions-row">
           <button type="button" className="btn btn-secondary" onClick={() => onRetry(settings)}>
             同じ問題でリベンジ

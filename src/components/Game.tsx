@@ -3,8 +3,8 @@ import type { QuizData } from '../schema.ts'
 import { buildQuestions, type GameSettings, type Question } from '../lib/quiz.ts'
 import { formatSec, scoreAnswer, speedLabel, TIME_LIMIT_MS, comboBonus, type Answer } from '../lib/score.ts'
 import { playCorrect, playWrong, unlockSfx } from '../lib/sfx.ts'
-import type { GameResult } from '../lib/share.ts'
-import { totalScore } from '../lib/share.ts'
+import type { GameResult } from '../lib/result.ts'
+import { totalScore } from '../lib/result.ts'
 import { IntroPlayer, PlayerState, playerErrorMessage } from '../lib/youtube.ts'
 
 interface Props {

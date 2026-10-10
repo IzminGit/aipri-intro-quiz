@@ -6,7 +6,7 @@ import { Result } from './components/Result.tsx'
 import { Tune } from './components/Tune.tsx'
 import type { GameSettings } from './lib/quiz.ts'
 import { settingsFromHash, settingsToHash } from './lib/settings-url.ts'
-import type { GameResult } from './lib/share.ts'
+import type { GameResult } from './lib/result.ts'
 import { applyLocalIntroStarts, loadLocalIntroStarts } from './lib/storage.ts'
 
 type Screen =
