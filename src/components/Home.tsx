@@ -18,7 +18,7 @@ export function Home({ data, challenge, onStart }: Props) {
   const last = loadLastSettings()
   const [sets, setSets] = useState<string[]>(() => {
     const valid = last?.sets.filter((s) => allSets.includes(s)) ?? []
-    return valid.length ? valid : allSets.slice(0, 2)
+    return valid.length ? valid : allSets
   })
   const [count, setCount] = useState<number>(last?.count ?? COUNT_OPTIONS[1])
   const [showChallenge, setShowChallenge] = useState(challenge !== null)
