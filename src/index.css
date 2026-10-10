@@ -582,7 +582,9 @@ code {
 }
 
 .choice-title {
-  flex: 1;
+  /* 6em を下限にして、タグが入りきらないときはタグを次の行へ折り返す
+     （flex: 1 だとタイトル幅が 0 まで縮み、1文字ずつ縦に並んでしまう） */
+  flex: 1 1 6em;
   min-width: 0;
   display: grid;
   gap: 2px;
@@ -598,6 +600,8 @@ code {
 
 .choice-tag {
   flex: none;
+  margin-left: auto;
+  white-space: nowrap;
   font-size: 0.75rem;
   padding: 0.15em 0.7em;
   border-radius: 999px;
