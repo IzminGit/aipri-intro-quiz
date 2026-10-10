@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T14:33:04.491Z",
+  "generatedAt": "2026-10-10T14:46:48.845Z",
   "sets": [
     {
       "slug": "onegai-aipri",
@@ -275,38 +275,17 @@
       ]
     },
     {
-      "id": "ひまりのひみつマイソング",
-      "title": "ひまりのひみつマイソング♪",
+      "id": "ひみつマイソング",
+      "title": "ひみつマイソング♪",
       "singers": [
-        "ひまり"
-      ]
-    },
-    {
-      "id": "みつきのひみつマイソング",
-      "title": "みつきのひみつマイソング♪",
-      "singers": [
-        "みつき"
-      ]
-    },
-    {
-      "id": "サクラのひみつマイソング",
-      "title": "サクラのひみつマイソング♪",
-      "singers": [
-        "サクラ"
-      ]
-    },
-    {
-      "id": "タマキのひみつマイソング",
-      "title": "タマキのひみつマイソング♪",
-      "singers": [
-        "タマキ"
-      ]
-    },
-    {
-      "id": "アイリのひみつマイソング",
-      "title": "アイリのひみつマイソング♪",
-      "singers": [
-        "アイリ"
+        "ひまり",
+        "みつき",
+        "サクラ",
+        "タマキ",
+        "アイリ",
+        "リンリン",
+        "チィ",
+        "つむぎ"
       ]
     },
     {
@@ -321,27 +300,6 @@
         "つむぎ",
         "タマキ",
         "サクラ"
-      ]
-    },
-    {
-      "id": "リンリンのひみつマイソング",
-      "title": "リンリンのひみつマイソング♪",
-      "singers": [
-        "リンリン"
-      ]
-    },
-    {
-      "id": "チィのひみつマイソング",
-      "title": "チィのひみつマイソング♪",
-      "singers": [
-        "チィ"
-      ]
-    },
-    {
-      "id": "つむぎのひみつマイソング",
-      "title": "つむぎのひみつマイソング♪",
-      "singers": [
-        "つむぎ"
       ]
     },
     {
@@ -733,7 +691,7 @@
     },
     {
       "id": "fj7QCw7lcwY",
-      "songId": "ひまりのひみつマイソング",
+      "songId": "ひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "ひまり",
       "introStart": 2.3,
@@ -741,7 +699,7 @@
     },
     {
       "id": "cTKKaSeq8Oo",
-      "songId": "みつきのひみつマイソング",
+      "songId": "ひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "みつき",
       "introStart": 2.3,
@@ -749,7 +707,7 @@
     },
     {
       "id": "bxm0V3GWQuA",
-      "songId": "サクラのひみつマイソング",
+      "songId": "ひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "サクラ",
       "introStart": 2.3,
@@ -757,7 +715,7 @@
     },
     {
       "id": "P-2V1A3eR2s",
-      "songId": "タマキのひみつマイソング",
+      "songId": "ひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "タマキ",
       "introStart": 2.3,
@@ -765,7 +723,7 @@
     },
     {
       "id": "CSc65Po3RgA",
-      "songId": "アイリのひみつマイソング",
+      "songId": "ひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "アイリ",
       "introStart": 2.3,
@@ -781,7 +739,7 @@
     },
     {
       "id": "YbGPUUZSSwk",
-      "songId": "リンリンのひみつマイソング",
+      "songId": "ひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "リンリン",
       "introStart": 2.3,
@@ -805,7 +763,7 @@
     },
     {
       "id": "PSSrygN04uc",
-      "songId": "チィのひみつマイソング",
+      "songId": "ひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "チィ",
       "introStart": 2.3,
@@ -829,7 +787,7 @@
     },
     {
       "id": "Iofuk3OS08E",
-      "songId": "つむぎのひみつマイソング",
+      "songId": "ひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "つむぎ",
       "introStart": 2.3,
