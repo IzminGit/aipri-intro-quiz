@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T13:21:10.192Z",
+  "generatedAt": "2026-10-10T14:03:59.077Z",
   "sets": [
     {
       "slug": "onegai-aipri",
@@ -392,7 +392,7 @@
       "songId": "トキメキジャンプ",
       "set": "onegai-aipri",
       "performers": "好実いのり",
-      "introStart": 0,
+      "introStart": 2.2,
       "durationSec": 123
     },
     {
@@ -400,7 +400,7 @@
       "songId": "夢色ビリーバー",
       "set": "onegai-aipri",
       "performers": "夢宮あおい",
-      "introStart": 0,
+      "introStart": 2.7,
       "durationSec": 121
     },
     {
@@ -408,7 +408,7 @@
       "songId": "フレフレベストフレンズ",
       "set": "onegai-aipri",
       "performers": "友坂ぐみ",
-      "introStart": 0,
+      "introStart": 2.7,
       "durationSec": 121
     },
     {
@@ -416,7 +416,7 @@
       "songId": "トキメキジャンプ",
       "set": "onegai-aipri",
       "performers": "好実いのり、夢宮あおい",
-      "introStart": 0,
+      "introStart": 2.1,
       "durationSec": 123
     },
     {
@@ -424,7 +424,7 @@
       "songId": "勇気のはばたきサイン",
       "set": "onegai-aipri",
       "performers": "勇樹おりびあ",
-      "introStart": 0,
+      "introStart": 2.5,
       "durationSec": 121
     },
     {
@@ -432,7 +432,7 @@
       "songId": "フレフレベストフレンズ",
       "set": "onegai-aipri",
       "performers": "友坂ぐみ、勇樹おりびあ",
-      "introStart": 0,
+      "introStart": 2.7,
       "durationSec": 121
     },
     {
@@ -440,7 +440,7 @@
       "songId": "夢色ビリーバー",
       "set": "onegai-aipri",
       "performers": "夢宮あおい、友坂ぐみ",
-      "introStart": 0,
+      "introStart": 2.7,
       "durationSec": 121
     },
     {
@@ -448,7 +448,7 @@
       "songId": "toppower",
       "set": "onegai-aipri",
       "performers": "熱海ナナ",
-      "introStart": 0,
+      "introStart": 2.2,
       "durationSec": 129
     },
     {
@@ -456,7 +456,7 @@
       "songId": "ネガイスペシャリスト",
       "set": "onegai-aipri",
       "performers": "望永エマ",
-      "introStart": 0,
+      "introStart": 2.7,
       "durationSec": 125
     },
     {
@@ -464,7 +464,7 @@
       "songId": "勇気のはばたきサイン",
       "set": "onegai-aipri",
       "performers": "勇樹おりびあ、熱海ナナ",
-      "introStart": 0,
+      "introStart": 2.7,
       "durationSec": 121
     },
     {
@@ -472,7 +472,7 @@
       "songId": "toppower",
       "set": "onegai-aipri",
       "performers": "熱海ナナ、望永エマ",
-      "introStart": 0,
+      "introStart": 2.2,
       "durationSec": 129
     },
     {

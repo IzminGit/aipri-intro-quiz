@@ -1,4 +1,38 @@
 {
   "$comment": "動画IDごとの上書き。introStart=イントロ開始秒、exclude=出題しない、song=曲名の手動指定。アプリの「開始位置の調整」画面で書き出した内容を貼り付けて使う",
-  "videos": {}
+  "videos": {
+    "kuleEK8aVxM": {
+      "introStart": 2.2
+    },
+    "8JK0lH1xoOA": {
+      "introStart": 2.7
+    },
+    "YrBO6BcnAc0": {
+      "introStart": 2.7
+    },
+    "4VZcA09l1XQ": {
+      "introStart": 2.1
+    },
+    "UxtRZrfBaAM": {
+      "introStart": 2.5
+    },
+    "6P403KclEv4": {
+      "introStart": 2.7
+    },
+    "Hl96FuGJexg": {
+      "introStart": 2.7
+    },
+    "UmEmuxAsoA4": {
+      "introStart": 2.2
+    },
+    "I6vCGJDv1lo": {
+      "introStart": 2.7
+    },
+    "DMOQilTVOmw": {
+      "introStart": 2.7
+    },
+    "DPEEKvInkTw": {
+      "introStart": 2.2
+    }
+  }
 }
