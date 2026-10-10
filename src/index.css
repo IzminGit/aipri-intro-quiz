@@ -473,27 +473,29 @@ code {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  /* 8択をスマホでもスクロールなしで見渡せるよう、常に2列 */
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
-@media (min-width: 560px) {
-  .choices {
-    grid-template-columns: 1fr 1fr;
-  }
+.choices li {
+  display: flex;
 }
 
 .choice {
   font: inherit;
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
   width: 100%;
-  min-height: 64px;
+  min-height: 56px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
+  gap: 8px;
+  padding: 8px 10px;
   text-align: left;
-  border-radius: 16px;
+  word-break: break-word;
+  border-radius: 14px;
   border: 3px solid var(--line);
   background: var(--surface);
   color: var(--ink);
@@ -504,13 +506,34 @@ code {
 }
 
 .choices li:nth-child(2) .choice {
-  animation-delay: 0.04s;
+  animation-delay: 0.03s;
 }
 .choices li:nth-child(3) .choice {
-  animation-delay: 0.08s;
+  animation-delay: 0.06s;
 }
 .choices li:nth-child(4) .choice {
+  animation-delay: 0.09s;
+}
+.choices li:nth-child(5) .choice {
   animation-delay: 0.12s;
+}
+.choices li:nth-child(6) .choice {
+  animation-delay: 0.15s;
+}
+.choices li:nth-child(7) .choice {
+  animation-delay: 0.18s;
+}
+.choices li:nth-child(8) .choice {
+  animation-delay: 0.21s;
+}
+
+@media (min-width: 560px) {
+  .choice {
+    font-size: 1rem;
+    min-height: 60px;
+    gap: 10px;
+    padding: 10px 12px;
+  }
 }
 
 .choice:hover:not(:disabled) {
@@ -528,17 +551,22 @@ code {
 
 .choice-key {
   flex: none;
-  width: 2em;
-  height: 2em;
+  width: 1.8em;
+  height: 1.8em;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--bg-deco);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+}
+
+.choice {
+  flex-wrap: wrap;
 }
 
 .choice-title {
   flex: 1;
+  min-width: 0;
 }
 
 .choice-tag {

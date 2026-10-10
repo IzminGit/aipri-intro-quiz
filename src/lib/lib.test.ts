@@ -65,6 +65,7 @@ const data: QuizData = {
   sets: [
     { slug: 'a', name: 'A', shortName: 'A' },
     { slug: 'b', name: 'B', shortName: 'B' },
+    { slug: 'c', name: 'C', shortName: 'C' },
   ],
   songs: [
     song('s1', ['ひまり']),
@@ -73,6 +74,7 @@ const data: QuizData = {
     song('s4', ['つむぎ']),
     song('s5', ['サクラ']),
     song('s6', ['ひまり', 'みつき']),
+    ...['s7', 's8', 's9', 's10', 's11', 's12'].map((id) => song(id, ['ビビ'])),
   ],
   videos: [
     { id: 'v1', songId: 's1', set: 'a', performers: 'ひまり', introStart: 0, durationSec: 120 },
@@ -82,6 +84,14 @@ const data: QuizData = {
     { id: 'v4', songId: 's4', set: 'a', performers: 'つむぎ', introStart: 0, durationSec: 120 },
     { id: 'v5', songId: 's5', set: 'b', performers: 'サクラ', introStart: 0, durationSec: 120 },
     { id: 'v6', songId: 's6', set: 'b', performers: 'ひまり、みつき', introStart: 0, durationSec: 120 },
+    ...['s7', 's8', 's9', 's10', 's11', 's12'].map((songId) => ({
+      id: `v-${songId}`,
+      songId,
+      set: 'c',
+      performers: 'ビビ',
+      introStart: 0,
+      durationSec: 120,
+    })),
   ],
 }
 
@@ -96,19 +106,22 @@ describe('buildQuestions', () => {
     expect(qs).toHaveLength(4)
     expect(new Set(qs.map((q) => q.song.id)).size).toBe(4)
   })
-  it('4択に正解が1つ・重複なし', () => {
-    for (const q of buildQuestions(data, { ...settings, sets: ['a', 'b'] })) {
-      expect(q.choices).toHaveLength(4)
-      expect(new Set(q.choices.map((c) => c.id)).size).toBe(4)
+  it('8択に正解が1つ・重複なし', () => {
+    for (const q of buildQuestions(data, { ...settings, sets: ['a', 'b', 'c'] })) {
+      expect(q.choices).toHaveLength(8)
+      expect(new Set(q.choices.map((c) => c.id)).size).toBe(8)
       expect(q.choices[q.answerIndex].id).toBe(q.song.id)
     }
   })
   it('同じキャラの別曲をダミーに優先する', () => {
-    const q = buildQuestions(data, { sets: ['a', 'b'], count: 6, seed: 'y' }).find((x) => x.song.id === 's1')!
+    const q = buildQuestions(data, { sets: ['a', 'b', 'c'], count: 12, seed: 'y' }).find((x) => x.song.id === 's1')!
     expect(q.choices.map((c) => c.id)).toEqual(expect.arrayContaining(['s2', 's6']))
   })
-  it('セットの曲が4曲未満でも全曲から4択を作る', () => {
-    for (const q of buildQuestions(data, { sets: ['b'], count: 5, seed: 'z' })) expect(q.choices).toHaveLength(4)
+  it('セットの曲が足りないときは、セット内の曲を全部使ってからほかのセットで補う', () => {
+    for (const q of buildQuestions(data, { sets: ['a'], count: 5, seed: 'z' })) {
+      expect(q.choices).toHaveLength(8)
+      expect(q.choices.map((c) => c.id)).toEqual(expect.arrayContaining(['s1', 's2', 's3', 's4']))
+    }
   })
 })
 

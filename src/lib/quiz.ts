@@ -11,12 +11,14 @@ export interface GameSettings {
 export interface Question {
   video: QuizVideo
   song: Song
-  /** 4択（正解を含む） */
+  /** 8択（正解を含む） */
   choices: Song[]
   answerIndex: number
 }
 
-export const CHOICE_COUNT = 4
+export const CHOICE_COUNT = 8
+/** ダミーに混ぜる「同じキャラが歌う別の曲」の上限 */
+const SAME_CHARACTER_MAX = 3
 export const COUNT_OPTIONS = [5, 10, 15] as const
 
 /** 選んだセットで出題できる曲数 */
@@ -29,15 +31,26 @@ export function availableSongCount(data: QuizData, sets: readonly string[]): num
  * CGライブは映像でキャラが分かってしまうので、同じキャラが歌う別の曲を優先して混ぜ、
  * 「キャラは分かっても曲名はイントロを聴かないと当てられない」ようにする。
  */
-function pickDistractors(answer: Song, video: QuizVideo, pool: readonly Song[], rng: Rng): Song[] {
+function pickDistractors(
+  answer: Song,
+  video: QuizVideo,
+  inSets: readonly Song[],
+  allSongs: readonly Song[],
+  rng: Rng,
+): Song[] {
   const singers = splitSingers(video.performers)
   const others = shuffle(
-    pool.filter((s) => s.id !== answer.id),
+    inSets.filter((s) => s.id !== answer.id),
+    rng,
+  )
+  // 選んだセットの曲だけでは足りないときに補う、ほかのセットの曲
+  const extras = shuffle(
+    allSongs.filter((s) => s.id !== answer.id && !inSets.includes(s)),
     rng,
   )
   const sameCharacter = others.filter((s) => s.singers.some((a) => singers.some((b) => sameSinger(a, b))))
-  const picked = sameCharacter.slice(0, 2)
-  for (const s of others) {
+  const picked = sameCharacter.slice(0, SAME_CHARACTER_MAX)
+  for (const s of [...others, ...extras]) {
     if (picked.length >= CHOICE_COUNT - 1) break
     if (!picked.includes(s)) picked.push(s)
   }
@@ -51,9 +64,7 @@ export function buildQuestions(data: QuizData, settings: GameSettings): Question
   const songIds = [...new Set(videos.map((v) => v.songId))].sort()
   const songs = new Map(data.songs.map((s) => [s.id, s]))
 
-  // 選んだセットの曲が4曲未満なら、ダミーは全曲から選ぶ
   const inSets = songIds.map((id) => songs.get(id)!).filter(Boolean)
-  const pool = inSets.length >= CHOICE_COUNT ? inSets : data.songs
 
   return shuffle(songIds, rng)
     .slice(0, settings.count)
@@ -61,7 +72,7 @@ export function buildQuestions(data: QuizData, settings: GameSettings): Question
       const song = songs.get(songId)!
       const candidates = videos.filter((v) => v.songId === songId)
       const video = candidates[Math.floor(rng() * candidates.length)]
-      const choices = shuffle([song, ...pickDistractors(song, video, pool, rng)], rng)
+      const choices = shuffle([song, ...pickDistractors(song, video, inSets, data.songs, rng)], rng)
       return { video, song, choices, answerIndex: choices.indexOf(song) }
     })
 }

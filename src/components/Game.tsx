@@ -183,11 +183,11 @@ export function Game({ data, settings, onFinish, onQuit }: Props) {
     if (finished && phase === 'standby') onFinish({ questions: questions.slice(0, answers.length), answers })
   }, [finished, phase, onFinish, questions, answers])
 
-  // キーボード操作（1〜4で解答、Enter／スペースで次へ）
+  // キーボード操作（1〜8で解答、Enter／スペースで次へ）
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLElement && e.target.closest('input, textarea')) return
-      if (phase === 'answering' && /^[1-4]$/u.test(e.key)) {
+      if (phase === 'answering' && /^[1-9]$/u.test(e.key) && Number(e.key) <= (question?.choices.length ?? 0)) {
         e.preventDefault()
         answer(Number(e.key) - 1)
       } else if ((e.key === 'Enter' || e.key === ' ') && !e.repeat) {
