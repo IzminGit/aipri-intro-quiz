@@ -1,5 +1,5 @@
 {
-  "$comment": "動画IDごとの上書き。introStart=イントロ開始秒、exclude=出題しない、song=曲名の手動指定。アプリの「開始位置の調整」画面で書き出した内容を貼り付けて使う",
+  "$comment": "動画IDごとの上書き。introStart=イントロ開始秒、exclude=出題しない、song=曲名の手動指定、performers=歌唱者表記の手動指定。アプリの「開始位置の調整」画面で書き出した内容を貼り付けて使う",
   "videos": {
     "kuleEK8aVxM": {
       "introStart": 2.2
@@ -174,6 +174,9 @@
     },
     "H6d9nyhN8JY": {
       "introStart": 1.9
+    },
+    "7BkrQlBz5c8": {
+      "performers": "P丸様。"
     }
   }
 }

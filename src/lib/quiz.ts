@@ -8,17 +8,32 @@ export interface GameSettings {
   seed: string
 }
 
+/**
+ * 選択肢1つ。曲名と歌唱者の組み合わせ（バージョン）で区別する。
+ * 歌唱者の表記がまったく同じ動画（例：MV とゲームMV）は同じ選択肢として扱う。
+ */
+export interface Choice {
+  key: string
+  songId: string
+  title: string
+  performers: string
+}
+
 export interface Question {
   video: QuizVideo
   song: Song
   /** 8択（正解を含む） */
-  choices: Song[]
+  choices: Choice[]
   answerIndex: number
 }
 
 export const CHOICE_COUNT = 8
 /** ダミーに混ぜる「同じキャラが歌う別の曲」の上限 */
 const SAME_CHARACTER_MAX = 3
+/** 流れた曲のバージョン（正解を含む）を選択肢に並べる上限 */
+const SAME_SONG_MAX = 4
+/** 同じ曲名が並ぶのが正解の曲だけにならないよう、ダミーにもバージョン違いをペアで混ぜる上限 */
+const DECOY_PAIR_MAX = 2
 export const COUNT_OPTIONS = [5, 10, 15] as const
 
 /** 選んだセットで出題できる曲数 */
@@ -26,35 +41,88 @@ export function availableSongCount(data: QuizData, sets: readonly string[]): num
   return new Set(data.videos.filter((v) => sets.includes(v.set)).map((v) => v.songId)).size
 }
 
+const choiceKey = (songId: string, performers: string) => `${songId}|${performers}`
+
 /**
- * ダミー選択肢を選ぶ。
- * CGライブは映像でキャラが分かってしまうので、同じキャラが歌う別の曲を優先して混ぜ、
- * 「キャラは分かっても曲名はイントロを聴かないと当てられない」ようにする。
+ * 曲ごとのバージョン（歌唱者の表記ちがい）の一覧を作る。
+ * 選んだセットにある動画を優先し、なければ全データから取る。
  */
-function pickDistractors(
-  answer: Song,
+function versionIndex(data: QuizData, inSetVideos: readonly QuizVideo[]) {
+  const songs = new Map(data.songs.map((s) => [s.id, s]))
+  const build = (videos: readonly QuizVideo[]) => {
+    const map = new Map<string, Choice[]>()
+    for (const v of videos) {
+      const list = map.get(v.songId) ?? []
+      const key = choiceKey(v.songId, v.performers)
+      if (!list.some((c) => c.key === key)) {
+        list.push({ key, songId: v.songId, title: songs.get(v.songId)?.title ?? v.songId, performers: v.performers })
+      }
+      map.set(v.songId, list)
+    }
+    for (const list of map.values()) list.sort((a, b) => a.key.localeCompare(b.key))
+    return map
+  }
+  const inSets = build(inSetVideos)
+  const all = build(data.videos)
+  return (songId: string): Choice[] => inSets.get(songId) ?? all.get(songId) ?? []
+}
+
+/**
+ * 8択を作る。
+ * - 流れた曲に別バージョンがあれば、それも選択肢に並べて「誰が歌っているか」まで当てさせる
+ * - CGライブは映像でキャラが分かってしまうので、同じキャラが歌う別の曲を優先してダミーに混ぜる
+ * - 正解の曲だけ同じ曲名が並ぶと曲名がバレるので、ダミーにもバージョン違いをペアで混ぜる
+ */
+function buildChoices(
+  song: Song,
   video: QuizVideo,
   inSets: readonly Song[],
   allSongs: readonly Song[],
+  versionsOf: (songId: string) => Choice[],
   rng: Rng,
-): Song[] {
+): Choice[] {
+  const answerKey = choiceKey(song.id, video.performers)
+  const answer = versionsOf(song.id).find((c) => c.key === answerKey) ?? {
+    key: answerKey,
+    songId: song.id,
+    title: song.title,
+    performers: video.performers,
+  }
+  const picked: Choice[] = [answer]
+  const siblings = shuffle(
+    versionsOf(song.id).filter((c) => c.key !== answerKey),
+    rng,
+  ).slice(0, SAME_SONG_MAX - 1)
+  picked.push(...siblings)
+
   const singers = splitSingers(video.performers)
   const others = shuffle(
-    inSets.filter((s) => s.id !== answer.id),
+    inSets.filter((s) => s.id !== song.id),
     rng,
   )
   // 選んだセットの曲だけでは足りないときに補う、ほかのセットの曲
   const extras = shuffle(
-    allSongs.filter((s) => s.id !== answer.id && !inSets.includes(s)),
+    allSongs.filter((s) => s.id !== song.id && !inSets.includes(s)),
     rng,
   )
-  const sameCharacter = others.filter((s) => s.singers.some((a) => singers.some((b) => sameSinger(a, b))))
-  const picked = sameCharacter.slice(0, SAME_CHARACTER_MAX)
-  for (const s of [...others, ...extras]) {
-    if (picked.length >= CHOICE_COUNT - 1) break
-    if (!picked.includes(s)) picked.push(s)
+  const sameCharacter = others
+    .filter((s) => s.singers.some((a) => singers.some((b) => sameSinger(a, b))))
+    .slice(0, SAME_CHARACTER_MAX)
+  const order = [...new Set([...sameCharacter, ...others, ...extras])]
+
+  let pairs = 0
+  for (const s of order) {
+    if (picked.length >= CHOICE_COUNT) break
+    const versions = shuffle(versionsOf(s.id), rng)
+    if (!versions.length) continue
+    picked.push(versions[0])
+    const needsDecoy = siblings.length > 0 && pairs < DECOY_PAIR_MAX && versions.length >= 2
+    if (needsDecoy && picked.length < CHOICE_COUNT) {
+      picked.push(versions[1])
+      pairs++
+    }
   }
-  return picked
+  return shuffle(picked, rng)
 }
 
 /** 設定（セット・問題数・シード）から問題を作る。同じ設定とデータなら必ず同じ問題になる */
@@ -63,8 +131,8 @@ export function buildQuestions(data: QuizData, settings: GameSettings): Question
   const videos = data.videos.filter((v) => settings.sets.includes(v.set))
   const songIds = [...new Set(videos.map((v) => v.songId))].sort()
   const songs = new Map(data.songs.map((s) => [s.id, s]))
-
   const inSets = songIds.map((id) => songs.get(id)!).filter(Boolean)
+  const versionsOf = versionIndex(data, videos)
 
   return shuffle(songIds, rng)
     .slice(0, settings.count)
@@ -72,7 +140,8 @@ export function buildQuestions(data: QuizData, settings: GameSettings): Question
       const song = songs.get(songId)!
       const candidates = videos.filter((v) => v.songId === songId)
       const video = candidates[Math.floor(rng() * candidates.length)]
-      const choices = shuffle([song, ...pickDistractors(song, video, inSets, data.songs, rng)], rng)
-      return { video, song, choices, answerIndex: choices.indexOf(song) }
+      const choices = buildChoices(song, video, inSets, data.songs, versionsOf, rng)
+      const answerKey = choiceKey(song.id, video.performers)
+      return { video, song, choices, answerIndex: choices.findIndex((c) => c.key === answerKey) }
     })
 }

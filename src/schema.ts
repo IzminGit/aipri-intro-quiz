@@ -20,6 +20,8 @@ export interface VideoOverride {
   introStart?: number
   exclude?: boolean
   song?: string
+  /** 歌唱者の表記を手で指定（同じ人が歌う動画を同じ選択肢にまとめたいときなど） */
+  performers?: string
 }
 
 export interface QuizOverrides {

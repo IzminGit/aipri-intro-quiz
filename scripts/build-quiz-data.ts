@@ -50,9 +50,10 @@ export function buildQuizData(
       const ov = overrides.videos[v.id] ?? {}
       if (ov.exclude) continue
       const parsed = parseTitle(v.title)
+      const performers = ov.performers ?? parsed.performers
       const title = ov.song ?? parsed.song
       const id = songKey(title)
-      const singers = splitSingers(parsed.performers)
+      const singers = splitSingers(performers)
 
       const song = songs.get(id) ?? { id, title, singers: [] }
       for (const s of singers) if (!song.singers.some((x) => sameSinger(x, s))) song.singers.push(s)
@@ -63,7 +64,7 @@ export function buildQuizData(
         id: v.id,
         songId: id,
         set: set.slug,
-        performers: parsed.performers,
+        performers,
         introStart: Math.min(Math.max(0, introStart), Math.max(0, v.durationSec - 5)),
         durationSec: v.durationSec,
       })
