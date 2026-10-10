@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T14:19:14.008Z",
+  "generatedAt": "2026-10-10T14:27:23.301Z",
   "sets": [
     {
       "slug": "onegai-aipri",
@@ -712,7 +712,7 @@
       "songId": "ぜんりょくじょしかくめい",
       "set": "himitsu-aipri-game-mv",
       "performers": "P丸様。",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 96
     },
     {
@@ -720,7 +720,7 @@
       "songId": "レッツアイプリ",
       "set": "himitsu-aipri-game-mv",
       "performers": "ひまり",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 124
     },
     {
@@ -728,7 +728,7 @@
       "songId": "レッツアイプリ",
       "set": "himitsu-aipri-game-mv",
       "performers": "みつき",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 124
     },
     {
@@ -736,7 +736,7 @@
       "songId": "ひまりのひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "ひまり",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
@@ -744,7 +744,7 @@
       "songId": "みつきのひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "みつき",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
@@ -752,7 +752,7 @@
       "songId": "サクラのひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "サクラ",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
@@ -760,7 +760,7 @@
       "songId": "タマキのひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "タマキ",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
@@ -768,7 +768,7 @@
       "songId": "アイリのひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "アイリ",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
@@ -776,7 +776,7 @@
       "songId": "ハピハピハッピーマイバースデー",
       "set": "himitsu-aipri-game-mv",
       "performers": "ひまり",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 127
     },
     {
@@ -784,7 +784,7 @@
       "songId": "リンリンのひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "リンリン",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
@@ -792,7 +792,7 @@
       "songId": "ハピハピハッピーマイバースデー",
       "set": "himitsu-aipri-game-mv",
       "performers": "みつき",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 127
     },
     {
@@ -800,7 +800,7 @@
       "songId": "ハピハピハッピーマイバースデー",
       "set": "himitsu-aipri-game-mv",
       "performers": "リンリン",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 127
     },
     {
@@ -808,7 +808,7 @@
       "songId": "チィのひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "チィ",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
@@ -816,7 +816,7 @@
       "songId": "ハピハピハッピーマイバースデー",
       "set": "himitsu-aipri-game-mv",
       "performers": "アイリ",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 127
     },
     {
@@ -824,7 +824,7 @@
       "songId": "ハピハピハッピーマイバースデー",
       "set": "himitsu-aipri-game-mv",
       "performers": "チィ",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 127
     },
     {
@@ -832,7 +832,7 @@
       "songId": "つむぎのひみつマイソング",
       "set": "himitsu-aipri-game-mv",
       "performers": "つむぎ",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
@@ -840,7 +840,7 @@
       "songId": "クリスマスカルテット",
       "set": "himitsu-aipri-game-mv",
       "performers": "カルテットスター",
-      "introStart": 0,
+      "introStart": 2.5,
       "durationSec": 127
     },
     {
@@ -848,7 +848,7 @@
       "songId": "ハピハピハッピーマイバースデー",
       "set": "himitsu-aipri-game-mv",
       "performers": "つむぎ",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 127
     },
     {
@@ -856,7 +856,7 @@
       "songId": "ハピハピハッピーマイバースデー",
       "set": "himitsu-aipri-game-mv",
       "performers": "タマキ",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 127
     },
     {
@@ -864,7 +864,7 @@
       "songId": "ハピハピハッピーマイバースデー",
       "set": "himitsu-aipri-game-mv",
       "performers": "サクラ",
-      "introStart": 0,
+      "introStart": 3.1,
       "durationSec": 127
     },
     {
@@ -872,7 +872,7 @@
       "songId": "クリスマスシークレット",
       "set": "himitsu-aipri-game-mv",
       "performers": "ひまり・みつき・つむぎ",
-      "introStart": 0,
+      "introStart": 2.3,
       "durationSec": 128
     },
     {
