@@ -1,0 +1,46 @@
+name: Update quiz data
+
+# aipri-channel の catalog.json（毎日 05:17 JST 更新）から出題データを作り直し、
+# 変化があれば quiz.json をコミットする。main への push で Vercel が再デプロイする。
+on:
+  schedule:
+    # 毎日 06:07 JST（aipri-channel の更新の後）
+    - cron: '7 21 * * *'
+  push:
+    branches: [main]
+    paths: [quiz.config.json, quiz-overrides.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Build quiz data
+        run: npm run build-data
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- public/data/quiz.json; then
+            echo "出題データに変更はありません"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/quiz.json
+          git commit -m "chore(data): 出題データを更新"
+          git pull --rebase
+          git push

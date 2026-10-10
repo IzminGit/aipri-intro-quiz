@@ -1,0 +1,34 @@
+{
+  "catalogUrl": "https://raw.githubusercontent.com/IzminGit/aipri-channel/main/public/data/catalog.json",
+  "defaultIntroStart": 0,
+  "sets": [
+    {
+      "slug": "onegai-aipri",
+      "name": "おねがいアイプリ CGライブ",
+      "shortName": "おねがい",
+      "channelSlug": "onegai-aipri",
+      "defaultIntroStart": 0
+    },
+    {
+      "slug": "himitsu-aipri",
+      "name": "ひみつのアイプリ CGライブ",
+      "shortName": "ひみつ",
+      "channelSlug": "himitsu-aipri",
+      "defaultIntroStart": 0
+    },
+    {
+      "slug": "himitsu-aipri-game-mv",
+      "name": "ひみつのアイプリ ゲームMV",
+      "shortName": "ゲームMV",
+      "channelSlug": "himitsu-aipri-game-mv",
+      "defaultIntroStart": 0
+    },
+    {
+      "slug": "himitsu-aipri-oped",
+      "name": "ひみつのアイプリ OP/ED",
+      "shortName": "OP/ED",
+      "channelSlug": "himitsu-aipri-oped",
+      "defaultIntroStart": 0
+    }
+  ]
+}

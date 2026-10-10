@@ -1,0 +1,935 @@
+{
+  "generatedAt": "2026-10-10T13:21:10.192Z",
+  "sets": [
+    {
+      "slug": "onegai-aipri",
+      "name": "おねがいアイプリ CGライブ",
+      "shortName": "おねがい"
+    },
+    {
+      "slug": "himitsu-aipri",
+      "name": "ひみつのアイプリ CGライブ",
+      "shortName": "ひみつ"
+    },
+    {
+      "slug": "himitsu-aipri-game-mv",
+      "name": "ひみつのアイプリ ゲームMV",
+      "shortName": "ゲームMV"
+    },
+    {
+      "slug": "himitsu-aipri-oped",
+      "name": "ひみつのアイプリ OP/ED",
+      "shortName": "OP/ED"
+    }
+  ],
+  "songs": [
+    {
+      "id": "トキメキジャンプ",
+      "title": "トキメキ♡ジャンプ！",
+      "singers": [
+        "好実いのり",
+        "夢宮あおい"
+      ]
+    },
+    {
+      "id": "夢色ビリーバー",
+      "title": "夢色ビリーバー",
+      "singers": [
+        "夢宮あおい",
+        "友坂ぐみ"
+      ]
+    },
+    {
+      "id": "フレフレベストフレンズ",
+      "title": "フレフレベストフレンズ",
+      "singers": [
+        "友坂ぐみ",
+        "勇樹おりびあ"
+      ]
+    },
+    {
+      "id": "勇気のはばたきサイン",
+      "title": "勇気のはばたきサイン",
+      "singers": [
+        "勇樹おりびあ",
+        "熱海ナナ"
+      ]
+    },
+    {
+      "id": "toppower",
+      "title": "TOP POWER",
+      "singers": [
+        "熱海ナナ",
+        "望永エマ"
+      ]
+    },
+    {
+      "id": "ネガイスペシャリスト",
+      "title": "ネガイ・スペシャリスト",
+      "singers": [
+        "望永エマ"
+      ]
+    },
+    {
+      "id": "poppy",
+      "title": "P.O.P.P.Y",
+      "singers": [
+        "青空ひまり"
+      ]
+    },
+    {
+      "id": "シークレットドリーム",
+      "title": "シークレット・ドリーム",
+      "singers": [
+        "星川みつき"
+      ]
+    },
+    {
+      "id": "standgetup",
+      "title": "Stand Get Up",
+      "singers": [
+        "一条寺サクラ",
+        "二階堂タマキ"
+      ]
+    },
+    {
+      "id": "ムテキduoエナジー",
+      "title": "ムテキDUOエナジー",
+      "singers": [
+        "青空ひまり",
+        "星川みつき"
+      ]
+    },
+    {
+      "id": "ヒカリノコトバ",
+      "title": "ヒカリノコトバ",
+      "singers": [
+        "鈴風つむぎ"
+      ]
+    },
+    {
+      "id": "we'retheworld",
+      "title": "We're The World",
+      "singers": [
+        "青空ひまり",
+        "星川みつき",
+        "鈴風つむぎ"
+      ]
+    },
+    {
+      "id": "ネバギバラバー",
+      "title": "ネバギバラバー",
+      "singers": [
+        "三ツ葉アイリ",
+        "四之宮リンリン"
+      ]
+    },
+    {
+      "id": "perfectstars",
+      "title": "Perfect☆STARs",
+      "singers": [
+        "一条寺サクラ",
+        "二階堂タマキ",
+        "三ツ葉アイリ",
+        "四之宮リンリン"
+      ]
+    },
+    {
+      "id": "giragirastar",
+      "title": "GIRA GIRA STAR",
+      "singers": [
+        "真実夜チィ",
+        "ダークチィ"
+      ]
+    },
+    {
+      "id": "きらめきのうた",
+      "title": "きらめきのうた",
+      "singers": [
+        "鈴風つむぎ",
+        "青空ひまり",
+        "星川みつき"
+      ]
+    },
+    {
+      "id": "パステルステップデイズ",
+      "title": "パステルステップデイズ",
+      "singers": [
+        "青空ひまり"
+      ]
+    },
+    {
+      "id": "ニュースタージョーカー",
+      "title": "ニュースタージョーカー",
+      "singers": [
+        "ダークサクラ",
+        "ダークタマキ",
+        "ダークアイリ",
+        "ダークリンリン",
+        "一条寺サクラ",
+        "二階堂タマキ",
+        "三ツ葉アイリ",
+        "四之宮リンリン"
+      ]
+    },
+    {
+      "id": "キズナ×リンク",
+      "title": "キズナ×リンク",
+      "singers": [
+        "青空ひまり",
+        "星川みつき",
+        "ひみつのアイプリ"
+      ]
+    },
+    {
+      "id": "超easydrive",
+      "title": "超Easy Drive☆",
+      "singers": [
+        "五十嵐じゅりあ"
+      ]
+    },
+    {
+      "id": "わたしの大切にしてたこと",
+      "title": "わたしの大切にしてたこと",
+      "singers": [
+        "六堂える"
+      ]
+    },
+    {
+      "id": "ときめきグラビティ",
+      "title": "ときめきグラビティ",
+      "singers": [
+        "五十嵐じゅりあ",
+        "六堂える"
+      ]
+    },
+    {
+      "id": "ぴかぴかマイストーリー",
+      "title": "ぴかぴかマイストーリー",
+      "singers": [
+        "星川みつき"
+      ]
+    },
+    {
+      "id": "pieceofdream",
+      "title": "Piece Of Dream",
+      "singers": [
+        "七浦すばる"
+      ]
+    },
+    {
+      "id": "ココロアストロノーツ",
+      "title": "ココロ・アストロノーツ",
+      "singers": [
+        "七浦すばる",
+        "七浦おとめ"
+      ]
+    },
+    {
+      "id": "わいるどすたー",
+      "title": "わいるど☆すたー",
+      "singers": [
+        "八王子ビビ",
+        "真実夜チィ"
+      ]
+    },
+    {
+      "id": "ミライのプリンセス",
+      "title": "ミライのプリンセス",
+      "singers": [
+        "リング・クローバー",
+        "鈴風つむぎ"
+      ]
+    },
+    {
+      "id": "ミラクルツインスマイル",
+      "title": "ミラクル☆ツインスマイル",
+      "singers": [
+        "青空ひまり",
+        "星川みつき"
+      ]
+    },
+    {
+      "id": "レジェンドストーリー",
+      "title": "レジェンド・ストーリー!!!!",
+      "singers": [
+        "一条寺サクラ",
+        "二階堂タマキ",
+        "三ツ葉アイリ",
+        "四之宮リンリン"
+      ]
+    },
+    {
+      "id": "ぜんりょくじょしかくめい",
+      "title": "ぜんりょくじょしかくめい！",
+      "singers": [
+        "P丸様。"
+      ]
+    },
+    {
+      "id": "レッツアイプリ",
+      "title": "レッツ！アイプリ",
+      "singers": [
+        "ひまり",
+        "みつき"
+      ]
+    },
+    {
+      "id": "ひまりのひみつマイソング",
+      "title": "ひまりのひみつマイソング♪",
+      "singers": [
+        "ひまり"
+      ]
+    },
+    {
+      "id": "みつきのひみつマイソング",
+      "title": "みつきのひみつマイソング♪",
+      "singers": [
+        "みつき"
+      ]
+    },
+    {
+      "id": "サクラのひみつマイソング",
+      "title": "サクラのひみつマイソング♪",
+      "singers": [
+        "サクラ"
+      ]
+    },
+    {
+      "id": "タマキのひみつマイソング",
+      "title": "タマキのひみつマイソング♪",
+      "singers": [
+        "タマキ"
+      ]
+    },
+    {
+      "id": "アイリのひみつマイソング",
+      "title": "アイリのひみつマイソング♪",
+      "singers": [
+        "アイリ"
+      ]
+    },
+    {
+      "id": "ハピハピハッピーマイバースデー",
+      "title": "ハピハピハッピー☆マイバースデー",
+      "singers": [
+        "ひまり",
+        "みつき",
+        "リンリン",
+        "アイリ",
+        "チィ",
+        "つむぎ",
+        "タマキ",
+        "サクラ"
+      ]
+    },
+    {
+      "id": "リンリンのひみつマイソング",
+      "title": "リンリンのひみつマイソング♪",
+      "singers": [
+        "リンリン"
+      ]
+    },
+    {
+      "id": "チィのひみつマイソング",
+      "title": "チィのひみつマイソング♪",
+      "singers": [
+        "チィ"
+      ]
+    },
+    {
+      "id": "つむぎのひみつマイソング",
+      "title": "つむぎのひみつマイソング♪",
+      "singers": [
+        "つむぎ"
+      ]
+    },
+    {
+      "id": "クリスマスカルテット",
+      "title": "クリスマス・カルテット",
+      "singers": [
+        "カルテットスター"
+      ]
+    },
+    {
+      "id": "クリスマスシークレット",
+      "title": "クリスマス・シークレット",
+      "singers": [
+        "ひまり",
+        "みつき",
+        "つむぎ"
+      ]
+    },
+    {
+      "id": "ひみつだけどね",
+      "title": "ひみつだけどね",
+      "singers": []
+    },
+    {
+      "id": "いっちょくせんだいさくせん",
+      "title": "いっちょくせんだいさくせん！",
+      "singers": []
+    },
+    {
+      "id": "アイプリバースイン",
+      "title": "アイプリバースイン！",
+      "singers": []
+    },
+    {
+      "id": "ringringringfeatひまり",
+      "title": "Ring Ring Ring feat. ひまり",
+      "singers": []
+    },
+    {
+      "id": "ひみつのふふふ",
+      "title": "ひみつのふふふ",
+      "singers": []
+    }
+  ],
+  "videos": [
+    {
+      "id": "kuleEK8aVxM",
+      "songId": "トキメキジャンプ",
+      "set": "onegai-aipri",
+      "performers": "好実いのり",
+      "introStart": 0,
+      "durationSec": 123
+    },
+    {
+      "id": "8JK0lH1xoOA",
+      "songId": "夢色ビリーバー",
+      "set": "onegai-aipri",
+      "performers": "夢宮あおい",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "YrBO6BcnAc0",
+      "songId": "フレフレベストフレンズ",
+      "set": "onegai-aipri",
+      "performers": "友坂ぐみ",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "4VZcA09l1XQ",
+      "songId": "トキメキジャンプ",
+      "set": "onegai-aipri",
+      "performers": "好実いのり、夢宮あおい",
+      "introStart": 0,
+      "durationSec": 123
+    },
+    {
+      "id": "UxtRZrfBaAM",
+      "songId": "勇気のはばたきサイン",
+      "set": "onegai-aipri",
+      "performers": "勇樹おりびあ",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "6P403KclEv4",
+      "songId": "フレフレベストフレンズ",
+      "set": "onegai-aipri",
+      "performers": "友坂ぐみ、勇樹おりびあ",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "Hl96FuGJexg",
+      "songId": "夢色ビリーバー",
+      "set": "onegai-aipri",
+      "performers": "夢宮あおい、友坂ぐみ",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "UmEmuxAsoA4",
+      "songId": "toppower",
+      "set": "onegai-aipri",
+      "performers": "熱海ナナ",
+      "introStart": 0,
+      "durationSec": 129
+    },
+    {
+      "id": "I6vCGJDv1lo",
+      "songId": "ネガイスペシャリスト",
+      "set": "onegai-aipri",
+      "performers": "望永エマ",
+      "introStart": 0,
+      "durationSec": 125
+    },
+    {
+      "id": "DMOQilTVOmw",
+      "songId": "勇気のはばたきサイン",
+      "set": "onegai-aipri",
+      "performers": "勇樹おりびあ、熱海ナナ",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "DPEEKvInkTw",
+      "songId": "toppower",
+      "set": "onegai-aipri",
+      "performers": "熱海ナナ、望永エマ",
+      "introStart": 0,
+      "durationSec": 129
+    },
+    {
+      "id": "q9ssDOYLjGA",
+      "songId": "poppy",
+      "set": "himitsu-aipri",
+      "performers": "青空ひまり",
+      "introStart": 0,
+      "durationSec": 117
+    },
+    {
+      "id": "K0Dgzn2CpmY",
+      "songId": "シークレットドリーム",
+      "set": "himitsu-aipri",
+      "performers": "星川みつき",
+      "introStart": 0,
+      "durationSec": 108
+    },
+    {
+      "id": "BWyYn2SXkLc",
+      "songId": "standgetup",
+      "set": "himitsu-aipri",
+      "performers": "一条寺サクラ、二階堂タマキ",
+      "introStart": 0,
+      "durationSec": 114
+    },
+    {
+      "id": "OSh0gl96UO4",
+      "songId": "ムテキduoエナジー",
+      "set": "himitsu-aipri",
+      "performers": "青空ひまり、星川みつき",
+      "introStart": 0,
+      "durationSec": 119
+    },
+    {
+      "id": "8qvYnjzSuDE",
+      "songId": "ヒカリノコトバ",
+      "set": "himitsu-aipri",
+      "performers": "鈴風つむぎ",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "-iIG4VX9yog",
+      "songId": "we'retheworld",
+      "set": "himitsu-aipri",
+      "performers": "青空ひまり、星川みつき、鈴風つむぎ",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "w3leuKxKSDo",
+      "songId": "ネバギバラバー",
+      "set": "himitsu-aipri",
+      "performers": "三ツ葉アイリ、四之宮リンリン",
+      "introStart": 0,
+      "durationSec": 122
+    },
+    {
+      "id": "VEJQi8bHhK4",
+      "songId": "perfectstars",
+      "set": "himitsu-aipri",
+      "performers": "一条寺サクラ、二階堂タマキ、三ツ葉アイリ、四之宮リンリン",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "tzY7D7hgIcs",
+      "songId": "giragirastar",
+      "set": "himitsu-aipri",
+      "performers": "真実夜チィ",
+      "introStart": 0,
+      "durationSec": 115
+    },
+    {
+      "id": "9P9t6Cjpr6c",
+      "songId": "きらめきのうた",
+      "set": "himitsu-aipri",
+      "performers": "鈴風つむぎ",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "UXi-vtm3aAg",
+      "songId": "パステルステップデイズ",
+      "set": "himitsu-aipri",
+      "performers": "青空ひまり",
+      "introStart": 0,
+      "durationSec": 117
+    },
+    {
+      "id": "GBMFY6zPwOE",
+      "songId": "giragirastar",
+      "set": "himitsu-aipri",
+      "performers": "ダークチィ",
+      "introStart": 0,
+      "durationSec": 115
+    },
+    {
+      "id": "_kd0q-eyWww",
+      "songId": "ニュースタージョーカー",
+      "set": "himitsu-aipri",
+      "performers": "ダークサクラ、ダークタマキ、ダークアイリ、ダークリンリン",
+      "introStart": 0,
+      "durationSec": 122
+    },
+    {
+      "id": "_jKaexgo2cc",
+      "songId": "きらめきのうた",
+      "set": "himitsu-aipri",
+      "performers": "青空ひまり、星川みつき、鈴風つむぎ",
+      "introStart": 0,
+      "durationSec": 121
+    },
+    {
+      "id": "01cY2syJlV0",
+      "songId": "キズナ×リンク",
+      "set": "himitsu-aipri",
+      "performers": "青空ひまり、星川みつき",
+      "introStart": 0,
+      "durationSec": 116
+    },
+    {
+      "id": "pmlmQkBaXBo",
+      "songId": "超easydrive",
+      "set": "himitsu-aipri",
+      "performers": "五十嵐じゅりあ",
+      "introStart": 0,
+      "durationSec": 117
+    },
+    {
+      "id": "yJ7R6jAYNPA",
+      "songId": "わたしの大切にしてたこと",
+      "set": "himitsu-aipri",
+      "performers": "六堂える",
+      "introStart": 0,
+      "durationSec": 119
+    },
+    {
+      "id": "zyTT2P_1HWo",
+      "songId": "ときめきグラビティ",
+      "set": "himitsu-aipri",
+      "performers": "五十嵐じゅりあ、六堂える",
+      "introStart": 0,
+      "durationSec": 118
+    },
+    {
+      "id": "Oa5NtZzEOi4",
+      "songId": "ぴかぴかマイストーリー",
+      "set": "himitsu-aipri",
+      "performers": "星川みつき",
+      "introStart": 0,
+      "durationSec": 119
+    },
+    {
+      "id": "fFEHIaU9LSU",
+      "songId": "pieceofdream",
+      "set": "himitsu-aipri",
+      "performers": "七浦すばる",
+      "introStart": 0,
+      "durationSec": 118
+    },
+    {
+      "id": "zPD-5EwhQpo",
+      "songId": "ココロアストロノーツ",
+      "set": "himitsu-aipri",
+      "performers": "七浦すばる、七浦おとめ",
+      "introStart": 0,
+      "durationSec": 120
+    },
+    {
+      "id": "bKYrUxDgBeQ",
+      "songId": "わいるどすたー",
+      "set": "himitsu-aipri",
+      "performers": "八王子ビビ",
+      "introStart": 0,
+      "durationSec": 112
+    },
+    {
+      "id": "PGUX6ilp5_k",
+      "songId": "わいるどすたー",
+      "set": "himitsu-aipri",
+      "performers": "八王子ビビ、真実夜チィ",
+      "introStart": 0,
+      "durationSec": 112
+    },
+    {
+      "id": "AJzaGdxyOUE",
+      "songId": "ミライのプリンセス",
+      "set": "himitsu-aipri",
+      "performers": "リング・クローバー",
+      "introStart": 0,
+      "durationSec": 124
+    },
+    {
+      "id": "UjMDZi8gY5I",
+      "songId": "ミラクルツインスマイル",
+      "set": "himitsu-aipri",
+      "performers": "青空ひまり、星川みつき",
+      "introStart": 0,
+      "durationSec": 118
+    },
+    {
+      "id": "E_3AhIVSi7k",
+      "songId": "ミライのプリンセス",
+      "set": "himitsu-aipri",
+      "performers": "鈴風つむぎ、リング・クローバー",
+      "introStart": 0,
+      "durationSec": 124
+    },
+    {
+      "id": "nPIWECBH8oU",
+      "songId": "ニュースタージョーカー",
+      "set": "himitsu-aipri",
+      "performers": "一条寺サクラ、二階堂タマキ、三ツ葉アイリ、四之宮リンリン",
+      "introStart": 0,
+      "durationSec": 122
+    },
+    {
+      "id": "OkEbAePC7q8",
+      "songId": "レジェンドストーリー",
+      "set": "himitsu-aipri",
+      "performers": "一条寺サクラ、二階堂タマキ、三ツ葉アイリ、四之宮リンリン",
+      "introStart": 0,
+      "durationSec": 122
+    },
+    {
+      "id": "yRmssafjXf0",
+      "songId": "キズナ×リンク",
+      "set": "himitsu-aipri",
+      "performers": "ひみつのアイプリ",
+      "introStart": 0,
+      "durationSec": 232
+    },
+    {
+      "id": "QDLLl0ue65A",
+      "songId": "ぜんりょくじょしかくめい",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "P丸様。",
+      "introStart": 0,
+      "durationSec": 96
+    },
+    {
+      "id": "dz_Pwa3m18Y",
+      "songId": "レッツアイプリ",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "ひまり",
+      "introStart": 0,
+      "durationSec": 124
+    },
+    {
+      "id": "5FcsdctG0WM",
+      "songId": "レッツアイプリ",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "みつき",
+      "introStart": 0,
+      "durationSec": 124
+    },
+    {
+      "id": "fj7QCw7lcwY",
+      "songId": "ひまりのひみつマイソング",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "ひまり",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "cTKKaSeq8Oo",
+      "songId": "みつきのひみつマイソング",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "みつき",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "bxm0V3GWQuA",
+      "songId": "サクラのひみつマイソング",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "サクラ",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "P-2V1A3eR2s",
+      "songId": "タマキのひみつマイソング",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "タマキ",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "CSc65Po3RgA",
+      "songId": "アイリのひみつマイソング",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "アイリ",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "TdUcFp7yQ-Q",
+      "songId": "ハピハピハッピーマイバースデー",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "ひまり",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "YbGPUUZSSwk",
+      "songId": "リンリンのひみつマイソング",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "リンリン",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "PHPvXcygXfs",
+      "songId": "ハピハピハッピーマイバースデー",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "みつき",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "svqbaFIQ-Jg",
+      "songId": "ハピハピハッピーマイバースデー",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "リンリン",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "PSSrygN04uc",
+      "songId": "チィのひみつマイソング",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "チィ",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "K5gNdqyrJJU",
+      "songId": "ハピハピハッピーマイバースデー",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "アイリ",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "KSB3Wut2inc",
+      "songId": "ハピハピハッピーマイバースデー",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "チィ",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "Iofuk3OS08E",
+      "songId": "つむぎのひみつマイソング",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "つむぎ",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "Hxr2F7TR3SA",
+      "songId": "クリスマスカルテット",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "カルテットスター",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "wvXHSS06qDs",
+      "songId": "ハピハピハッピーマイバースデー",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "つむぎ",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "VDTlg6GtRo0",
+      "songId": "ハピハピハッピーマイバースデー",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "タマキ",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "hSxe2Gyf9io",
+      "songId": "ハピハピハッピーマイバースデー",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "サクラ",
+      "introStart": 0,
+      "durationSec": 127
+    },
+    {
+      "id": "8PUlnWF3vkg",
+      "songId": "クリスマスシークレット",
+      "set": "himitsu-aipri-game-mv",
+      "performers": "ひまり・みつき・つむぎ",
+      "introStart": 0,
+      "durationSec": 128
+    },
+    {
+      "id": "7BkrQlBz5c8",
+      "songId": "ぜんりょくじょしかくめい",
+      "set": "himitsu-aipri-oped",
+      "performers": "オープニング",
+      "introStart": 0,
+      "durationSec": 90
+    },
+    {
+      "id": "dqA-ReYbsTI",
+      "songId": "ひみつだけどね",
+      "set": "himitsu-aipri-oped",
+      "performers": "エンディング",
+      "introStart": 0,
+      "durationSec": 90
+    },
+    {
+      "id": "H6d9nyhN8JY",
+      "songId": "ぜんりょくじょしかくめい",
+      "set": "himitsu-aipri-oped",
+      "performers": "P丸様。",
+      "introStart": 0,
+      "durationSec": 226
+    },
+    {
+      "id": "ftok7xZZJ_c",
+      "songId": "いっちょくせんだいさくせん",
+      "set": "himitsu-aipri-oped",
+      "performers": "オープニング",
+      "introStart": 0,
+      "durationSec": 90
+    },
+    {
+      "id": "8FBtfc_ky4w",
+      "songId": "アイプリバースイン",
+      "set": "himitsu-aipri-oped",
+      "performers": "エンディング",
+      "introStart": 0,
+      "durationSec": 90
+    },
+    {
+      "id": "QCcjleklMFs",
+      "songId": "ringringringfeatひまり",
+      "set": "himitsu-aipri-oped",
+      "performers": "オープニング",
+      "introStart": 0,
+      "durationSec": 90
+    },
+    {
+      "id": "lLv4cBypI7o",
+      "songId": "ひみつのふふふ",
+      "set": "himitsu-aipri-oped",
+      "performers": "エンディング",
+      "introStart": 0,
+      "durationSec": 90
+    }
+  ]
+}
