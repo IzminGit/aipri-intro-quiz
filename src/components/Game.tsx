@@ -43,6 +43,7 @@ export function Game({ data, settings, onFinish, onQuit }: Props) {
   const bufferingSinceRef = useRef<number | null>(null)
   const questionRef = useRef<Question | undefined>(undefined)
   const hintTimerRef = useRef<number | undefined>(undefined)
+  const nextButtonRef = useRef<HTMLButtonElement>(null)
 
   const question = questions[index] as Question | undefined
   useEffect(() => {
@@ -163,6 +164,16 @@ export function Game({ data, settings, onFinish, onQuit }: Props) {
     return () => cancelAnimationFrame(raf)
   }, [phase, answer])
 
+  // 答えたら「次の問題」ボタンが見えるところまで自動でスクロールする
+  useEffect(() => {
+    if (phase !== 'revealed') return
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const raf = requestAnimationFrame(() =>
+      nextButtonRef.current?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }),
+    )
+    return () => cancelAnimationFrame(raf)
+  }, [phase])
+
   const finished = index >= questions.length
   const isLast = index >= questions.length - 1
 
@@ -221,8 +232,7 @@ export function Game({ data, settings, onFinish, onQuit }: Props) {
         </span>
       </div>
 
-      {/* 出題中は小さく（タイトルの曲名が切れて読めない）、正解発表で大きく見せる */}
-      <div className={`player-frame ${phase === 'revealed' ? 'is-big' : 'is-mini'}`}>
+      <div className="player-frame">
         <div ref={hostRef} className="player-host" />
       </div>
 
@@ -321,7 +331,7 @@ export function Game({ data, settings, onFinish, onQuit }: Props) {
               )}
             </p>
           )}
-          <button type="button" className="btn btn-primary btn-big" onClick={next}>
+          <button ref={nextButtonRef} type="button" className="btn btn-primary btn-big" onClick={next}>
             {isLast ? '結果を見る 🏁' : '次の問題 ▶'}
           </button>
         </section>
