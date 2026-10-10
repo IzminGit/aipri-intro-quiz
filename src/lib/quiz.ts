@@ -36,12 +36,12 @@ const SAME_SONG_MAX = 4
 const DECOY_PAIR_MAX = 2
 export const COUNT_OPTIONS = [5, 10, 15] as const
 
-/** 選んだセットで出題できる曲数 */
-export function availableSongCount(data: QuizData, sets: readonly string[]): number {
-  return new Set(data.videos.filter((v) => sets.includes(v.set)).map((v) => v.songId)).size
-}
-
 const choiceKey = (songId: string, performers: string) => `${songId}|${performers}`
+
+/** 選んだセットで出題できる曲数（曲名＋歌唱者の組み合わせで数える） */
+export function availableSongCount(data: QuizData, sets: readonly string[]): number {
+  return new Set(data.videos.filter((v) => sets.includes(v.set)).map((v) => choiceKey(v.songId, v.performers))).size
+}
 
 /**
  * 曲ごとのバージョン（歌唱者の表記ちがい）の一覧を作る。
@@ -133,15 +133,17 @@ export function buildQuestions(data: QuizData, settings: GameSettings): Question
   const songs = new Map(data.songs.map((s) => [s.id, s]))
   const inSets = songIds.map((id) => songs.get(id)!).filter(Boolean)
   const versionsOf = versionIndex(data, videos)
+  // 出題の単位は「曲名＋歌唱者」。同じ曲でも歌唱者が違えば別の問題として出る
+  const versionKeys = [...new Set(videos.map((v) => choiceKey(v.songId, v.performers)))].sort()
 
-  return shuffle(songIds, rng)
+  return shuffle(versionKeys, rng)
     .slice(0, settings.count)
-    .map((songId) => {
-      const song = songs.get(songId)!
-      const candidates = videos.filter((v) => v.songId === songId)
+    .map((key) => {
+      // 表記が同じ動画（MV とゲームMV など）が複数あれば、どれか1本を流す
+      const candidates = videos.filter((v) => choiceKey(v.songId, v.performers) === key)
       const video = candidates[Math.floor(rng() * candidates.length)]
+      const song = songs.get(video.songId)!
       const choices = buildChoices(song, video, inSets, data.songs, versionsOf, rng)
-      const answerKey = choiceKey(song.id, video.performers)
-      return { video, song, choices, answerIndex: choices.findIndex((c) => c.key === answerKey) }
+      return { video, song, choices, answerIndex: choices.findIndex((c) => c.key === key) }
     })
 }
