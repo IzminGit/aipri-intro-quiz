@@ -1,4 +1,4 @@
-import { COUNT_OPTIONS, type GameSettings } from './quiz.ts'
+import { normalizeCount, type GameSettings } from './quiz.ts'
 
 /**
  * 「挑戦状」リンク。同じ URL を開いた友達には同じ問題が出る。
@@ -17,7 +17,7 @@ export function settingsFromHash(hash: string, knownSets: readonly string[]): Ga
   const n = Number(q.get('n'))
   const seed = q.get('seed') ?? ''
   if (!sets.length || !/^[a-z0-9]{1,32}$/u.test(seed)) return null
-  const count = (COUNT_OPTIONS as readonly number[]).includes(n) ? n : COUNT_OPTIONS[1]
+  const count = normalizeCount(n)
   return { sets, count, seed }
 }
 

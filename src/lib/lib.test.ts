@@ -175,6 +175,10 @@ describe('挑戦状URL', () => {
   it('知らないセットや不正なシードは無視する', () => {
     expect(settingsFromHash('#/play?sets=zzz&n=5&seed=abc', ['a'])).toBeNull()
     expect(settingsFromHash('#/play?sets=a&n=5&seed=<x>', ['a'])).toBeNull()
-    expect(settingsFromHash('#/play?sets=a&n=7&seed=abc', ['a'])?.count).toBe(10)
+    expect(settingsFromHash('#/play?sets=a&n=7&seed=abc', ['a'])?.count).toBe(7)
+    expect(settingsFromHash('#/play?sets=a&n=40&seed=abc', ['a'])?.count).toBe(40)
+    expect(settingsFromHash('#/play?sets=a&n=41&seed=abc', ['a'])?.count).toBe(10)
+    expect(settingsFromHash('#/play?sets=a&n=0&seed=abc', ['a'])?.count).toBe(10)
+    expect(settingsFromHash('#/play?sets=a&n=2.5&seed=abc', ['a'])?.count).toBe(10)
   })
 })

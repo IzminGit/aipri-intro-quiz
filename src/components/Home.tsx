@@ -1,6 +1,13 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import type { QuizData } from '../schema.ts'
-import { availableSongCount, COUNT_OPTIONS, type GameSettings } from '../lib/quiz.ts'
+import {
+  availableSongCount,
+  COUNT_MAX,
+  COUNT_MIN,
+  COUNT_PRESETS,
+  normalizeCount,
+  type GameSettings,
+} from '../lib/quiz.ts'
 import { newSeed } from '../lib/rng.ts'
 import { bestKey } from '../lib/settings-url.ts'
 import { loadBestScores, loadLastSettings, saveLastSettings } from '../lib/storage.ts'
@@ -20,7 +27,7 @@ export function Home({ data, challenge, onStart }: Props) {
     const valid = last?.sets.filter((s) => allSets.includes(s)) ?? []
     return valid.length ? valid : allSets
   })
-  const [count, setCount] = useState<number>(last?.count ?? COUNT_OPTIONS[1])
+  const [count, setCount] = useState<number>(() => normalizeCount(last?.count))
   const [showChallenge, setShowChallenge] = useState(challenge !== null)
 
   const songCount = availableSongCount(data, sets)
@@ -72,8 +79,7 @@ export function Home({ data, challenge, onStart }: Props) {
             <h2 id="rules-title">あそびかた</h2>
             <ol>
               <li>
-                イントロが流れたら、8つの中から曲名をタップ！ 同じ曲でも<strong>歌っている人がちがえば別の答え</strong>
-                になるよ
+                イントロが流れたら、8つの中から<strong>曲名</strong>をタップ！ 歌っている人は当てなくてOKだよ
               </li>
               <li>
                 音が鳴ってから答えるまでの<strong>はやさ</strong>で点数が決まるよ（最大{MAX_POINTS}点・
@@ -100,9 +106,50 @@ export function Home({ data, challenge, onStart }: Props) {
               })}
             </div>
 
-            <h2 className="mt">問題数</h2>
-            <div className="segmented" role="radiogroup" aria-label="問題数">
-              {COUNT_OPTIONS.map((n) => (
+            <h2 className="mt" id="count-title">
+              問題数
+            </h2>
+            <div className="count-picker">
+              <button
+                type="button"
+                className="count-step"
+                aria-label="1問へらす"
+                disabled={count <= COUNT_MIN}
+                onClick={() => setCount((c) => Math.max(COUNT_MIN, c - 1))}
+              >
+                −
+              </button>
+              <output className="count-value" htmlFor="count-range" aria-live="polite">
+                <strong>{count}</strong>問
+              </output>
+              <button
+                type="button"
+                className="count-step"
+                aria-label="1問ふやす"
+                disabled={count >= COUNT_MAX}
+                onClick={() => setCount((c) => Math.min(COUNT_MAX, c + 1))}
+              >
+                ＋
+              </button>
+            </div>
+            <input
+              id="count-range"
+              className="count-range"
+              type="range"
+              min={COUNT_MIN}
+              max={COUNT_MAX}
+              step={1}
+              value={count}
+              aria-labelledby="count-title"
+              style={{ '--pct': `${((count - COUNT_MIN) / (COUNT_MAX - COUNT_MIN)) * 100}%` } as CSSProperties}
+              onChange={(e) => setCount(Number(e.target.value))}
+            />
+            <div className="count-scale" aria-hidden="true">
+              <span>{COUNT_MIN}</span>
+              <span>{COUNT_MAX}</span>
+            </div>
+            <div className="segmented count-presets" role="radiogroup" aria-label="問題数のプリセット">
+              {COUNT_PRESETS.map((n) => (
                 <button key={n} type="button" role="radio" aria-checked={count === n} onClick={() => setCount(n)}>
                   {n}問
                 </button>

@@ -26,7 +26,16 @@ export interface Question {
 export const CHOICE_COUNT = 8
 /** ダミーに混ぜる「同じキャラが歌う別の曲」の上限 */
 const SAME_CHARACTER_MAX = 3
-export const COUNT_OPTIONS = [5, 10, 15] as const
+export const COUNT_MIN = 1
+export const COUNT_MAX = 40
+export const COUNT_DEFAULT = 10
+/** 問題数のプリセット */
+export const COUNT_PRESETS = [5, 10, 20, 40] as const
+
+/** 問題数を 1〜40 の整数に収める（範囲外・数値でないときは既定値） */
+export function normalizeCount(n: unknown): number {
+  return typeof n === 'number' && Number.isInteger(n) && n >= COUNT_MIN && n <= COUNT_MAX ? n : COUNT_DEFAULT
+}
 
 const toChoice = (s: Song): Choice => ({ key: s.id, songId: s.id, title: s.title })
 
