@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T14:27:23.301Z",
+  "generatedAt": "2026-10-10T14:28:46.594Z",
   "sets": [
     {
       "slug": "onegai-aipri",
@@ -896,7 +896,7 @@
       "songId": "ぜんりょくじょしかくめい",
       "set": "himitsu-aipri-oped",
       "performers": "P丸様。",
-      "introStart": 0,
+      "introStart": 1.9,
       "durationSec": 226
     },
     {
